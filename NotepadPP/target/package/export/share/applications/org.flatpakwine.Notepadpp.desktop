@@ -1,9 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Name=Notepadpp
-Exec=run.sh
-Icon=org.flatpakwine.Notepadpp
-StartupNotify=true
-Terminal=false
-Type=Application
-Categories=Game;
