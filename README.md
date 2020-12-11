@@ -78,7 +78,7 @@ cp ~/flatpak-wine/NotepadPP/*.sh . ;#from git repo
 ./make_flatpak-wine.sh Notepadpp Notepadpp/ notepadpp.exe ;# or sh ./commandline.sh
 ```
 
-####after it's built (Install flatpak)
+###after it's built (Install flatpak)
 ```
 cd 'target/[flatpak-wine]Notepadpp'
 ./install.sh
