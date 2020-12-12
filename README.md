@@ -35,10 +35,14 @@ flatpak-builder build-dir ca.johnramsden.pathofexile.json
 ```
 After compilation, we can use the `files` directory as `wine` directory of playonlinux.
 
-####copy the files directory from build-dir to current directory
+####copy the files directory from build-dir to current directory 
 We can delete the `./build-dir/files/lib/debug` to save `100MB` size
+To further reduce 100MB the wine runtime size delete installers `files/share/wine/mono and files/share/wine/gecko`
+A total of 200MB is decreased
 ```
 rm -rf ./build-dir/files/lib/debug
+rm -rf .build-dir/files/share/wine/gecko
+rm -rf .build-dir/files/share/wine/mono
 ```
 
 #### To build a wine flatpak with (32 bit only)
