@@ -144,7 +144,7 @@ set -ex
 [ -e "$APP"/icon.png ] && cp "$APP"/icon.png target/package/export/share/icons/hicolor/48x48/apps/org.flatpakwine.$NAME.png
 cp -rd "$APP" target/package/files/
 #cp -r $WINE/bin $WINE/$LIB $WINE/share target/package/files/
-cp -vrp ../files/ target/package/
+cp -rp ../files/ target/package/
 
 chmod +x target/package/files/bin/run.sh
 chmod +x target/\[flatpak-wine\]$DOT_NAME/install.sh
