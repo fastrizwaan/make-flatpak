@@ -1,3 +1,6 @@
+# BUILD 32bit and 64bit (no WOW64)
+Just try this: NotepadPP64/Readme.txt
+
 # flatpak-wine
 
 Remember `[Flatpak-Linux]` bundles with make-flatpak.sh? flatpak-linux bundles required Playonlinux also many libraries like `libpng12.so` is not available with ubuntu and fedora. So, bundling windows apps using flatpak stopped working. Also `org.freedesktop.Platform 1.6` is in end-of-life.
