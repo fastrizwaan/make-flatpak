@@ -143,23 +143,27 @@ Type=Application
 Categories=Game;
 EOF
 
+# dnf install icoutils ImageMagick
 
+# If custom icon.png is provided by the flatpak maker
 #set -ex
 ## adding ImageMagicks's convert for different icon support for non gnome desktops
-#[ -e "$APP"/icon.png ] && for i in 16x16 32x32 48x48 64x64 128x128 256x256; \
-#do 
-#    convert "$APP"/icon.png -resize $i \
-#    target/package/export/share/icons/hicolor/$i/apps/org.flatpakwine64.$NAME.png; \
-#done
+if [ -e "$APP"/icon.png ]; then 
+   cp "$APP"/icon.png \
+   target/package/export/share/icons/hicolor/48x48/apps/org.flatpakwine32.$NAME.png;
+else
+   echo "    Extracting icon from $EXE file"
+   # Extract Icon and copy
+   # dnf install icoutils ImageMagick
+   wrestool -x --output=. -t14 "$APP"/"$EXE" ; #extracts ico file
+   convert "*.ico" "hello.png"; #this will get ping files as hello-0...hellol7.png
 
-# Extract Icon and copy
-# dnf install icoutils ImageMagick
-wrestool -x --output=. -t14 "$APP"/"$EXE" ; #extracts ico file
-convert "*.ico" "hello.png"; #this will get ping files as hello-0...hellol7.png
+   #hello-0.png is the highest resolution 256x256 (some has 48x48)
+   #so copy hello-0.png as icon
+   cp hello-0.png target/package/export/share/icons/\
+hicolor/48x48/apps/org.flatpakwine32.$NAME.png;
 
-#hello-0.png is the highest resolution 256x256
-#so copy hello-0.png as icon
-cp hello-0.png target/package/export/share/icons/hicolor/48x48/apps/org.flatpakwine64.$NAME.png;
+fi
 
 #remove ico and png files
 rm -f hello-?.png $EXE*.ico
