@@ -36,6 +36,8 @@ NICE_NAME=$(echo $(echo "$NAME" | sed 's/[A-Z]/ \0/g'))
 DOT_NAME=$(echo "$NICE_NAME" | tr " " . )
 WINEEXE="/app/bin/wine"
 ARCH="i386"
+WINEVERSION="wine32-5.0.3"
+#WINEVERSION="wine32-6.0.0"
 
 #Output
 echo "2.  Creating new target directory	[x]"
@@ -188,7 +190,7 @@ rm -f hello-?.png $EXE*.ico
 echo "10. Copying all files 	 		[x]"
 cp -rd "$APP" target/package/files/
 #32 bit wine files are copied to 
-cp -rf ../files/* target/package/files
+cp -rf ../$WINEVERSION/* target/package/files
 
 chmod +x target/package/files/bin/run.sh
 chmod +x target/\[flatpak-wine32\]$DOT_NAME/install.sh

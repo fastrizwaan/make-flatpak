@@ -1,1 +1,1 @@
-./make_flatpak-wine.sh Notepadpp Notepadpp/ notepadpp.exe
+./make_flatpak-wine32.sh Notepadpp Notepadpp/ notepadpp.exe

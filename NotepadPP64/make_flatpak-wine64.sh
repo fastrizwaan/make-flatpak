@@ -32,6 +32,10 @@ NICE_NAME=$(echo $(echo "$NAME" | sed 's/[A-Z]/ \0/g'))
 DOT_NAME=$(echo "$NICE_NAME" | tr " " . )
 WINEEXE="/app/bin/wine64"
 ARCH="x86_64"
+WINEVERSION="wine64-5.0.3"
+#WINEVERSION="wine64-6.0.0"
+
+
 
 mkdir -p target/package/files/bin
 mkdir -p target/package/files/lib
@@ -170,7 +174,7 @@ rm -f hello-?.png $EXE*.ico
 
 cp -rd "$APP" target/package/files/
 #64bit wine files are copied to 
-cp -rf ../files64/* target/package/files
+cp -rf ../$WINEVERSION/* target/package/files
 
 chmod +x target/package/files/bin/run.sh
 chmod +x target/\[flatpak-wine64\]$DOT_NAME/install.sh

@@ -66,9 +66,9 @@ mkdir ~/flatpak-mybuilds
 cd ~/flatpak-mybuilds/
 
 # copy "files directory" (wine)
-cp ~/flatpak-wine/files . -r ; 
+cp ~/flatpak-wine/files ./wine32-5.0.3 -r ; 
 #or 
-cp ~/flatpak-wine/build-wine32-5.0.3/build-dir/files . -r
+cp ~/flatpak-wine/build-wine32-5.0.3/build-dir/files ./wine32-5.0.3 -r
 
 # Create sub directory
 mkdir MyNotepadPP;
@@ -88,7 +88,7 @@ cp ~/.local/share/icons/hicolor/256x256/apps/1E64_notepad.0.png Notepadpp/icon.p
 cp ~/flatpak-wine/NotepadPP/*.sh . ;#from git repo
 
 #let's build it, will take 7-10 minutes on SSD in i5 5470
-./make_flatpak-wine.sh Notepadpp Notepadpp/ notepadpp.exe ;# or sh ./commandline.sh
+./make_flatpak-wine32.sh Notepadpp Notepadpp/ notepadpp.exe ;# or sh ./commandline.sh
 ```
 
 ###after it's built (Install flatpak)
