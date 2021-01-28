@@ -3,7 +3,8 @@ Just try this: NotepadPP64/Readme.txt
 
 # dependencies
 ```
-sudo dnf install icoutils ImageMagick -y
+sudo dnf install icoutils ImageMagick -y ; #Fedora
+sudo apt install icoutils imagemagick flatpak flatpak-builder ; #Debian/Ubuntu
 ```
 
 # flatpak-wine
